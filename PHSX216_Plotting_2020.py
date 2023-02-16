@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[5]:
 
 
 #Physics 216
@@ -19,22 +19,22 @@ import matplotlib.pyplot as plt
 #-------------------------------------------#
 #Data Section - Create Arrays for data. Perform necessary calculations
 #CHANGE THE VARIABLE NAMES and numbers to match your data
-Force = np.array([.98,1.96,2.94,3.92,4.90,5.88,6.86,7.84]) #what are units?
-Delta_x= np.array([0.019, 0.037,0.066,0.084,0.103,0.121,0.139,0.156]) #what are units?
+Ln_E= np.array([2.079,3.664,3.045,3.000,3.091,2.485,4.382,4.094,4.175,3.912,4.382,4.867]) #what are units?
+Ln_R_avg= np.array([-2.696,-2.772,-2.855,-2.947,-3.047,-3.158,-3.283,-3.426,-3.593,-3.794,-4.046,-4.382]) #what are units?
 
 
 #--------------------------------------------#
 #Create arrays for uncertainties
 #CHANGE THE VARIABLE NAME and numbers to match your data 
-err_Force = np.array([0.49,0.49,0.49,0.49,0.49,0.49,0.49,0.49])
+Ln_R = np.array([0.305,0.537,0.537,0.537,0.537,0.305,0.388,0.214,0.196,0.261,0.165,0.107])
 
 
 #--------------------------------------------#
 #Re-assign variables as x, y, dy so that the following code may remain generic
 
-x = Delta_x   #this should be the array you want to plot on the x axis
-y = Force
-dy = err_Force  #this should be your error in y array
+x = Ln_R_avg   #this should be the array you want to plot on the x axis
+y = Ln_E
+dy = Ln_R  #this should be your error in y array
 
 #----------------------------------------------#
 #Don't need to change anything in this section!
@@ -74,8 +74,8 @@ plt.scatter(x, y, color='blue', marker='o')
  
  
 #create labels  YOU NEED TO CHANGE THESE!!!
-plt.xlabel('Delta X')
-plt.ylabel('Force (mg)')
+plt.xlabel('Ln E')
+plt.ylabel('Ln r')
 plt.title('Force (mg) vs Delta X')
  
 plt.errorbar(x, y, yerr=dy, xerr=None, fmt="none") #don't need to plot x error bars
@@ -92,7 +92,13 @@ plt.annotate('Goodness of fit = {value:.{digits}E}'.format(value=N, digits=2),
 plt.show()
 
 
+# In[ ]:
 
+
+
+
+
+# In[ ]:
 
 
 
